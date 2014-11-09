@@ -1,0 +1,302 @@
+/*--------------------------------------------------------------------------
+*
+*  Typography
+*
+* This section a set of default forms styles, please add/change these styles.
+* There are actionables here.
+*
+*-------------------------------------------------------------------------*/
+
+$defaultFont: 'PT Mono', courier, sans-serif;
+$arvo: 'Arvo', 'PT Mono', courier, serif;
+$helvetica: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+$text: 16px;
+$line-height: 1.5em;
+
+
+html {
+    font-family: $defaultFont;
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    font-family: $defaultFont;
+    font-size: $text;
+    line-height: $line-height;
+    color: rgba(black,0.85);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: normal;
+    line-height: $line-height;
+    color: rgba(white,0.9);
+}
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small,
+.h1 small,
+.h2 small,
+.h3 small,
+.h4 small,
+.h5 small,
+.h6 small,
+h1 .small,
+h2 .small,
+h3 .small,
+h4 .small,
+h5 .small,
+h6 .small,
+.h1 .small,
+.h2 .small,
+.h3 .small,
+.h4 .small,
+.h5 .small,
+.h6 .small {
+    font-size: 65%;
+    font-weight: normal;
+    line-height: 1;
+}
+
+h1,
+.h1 {
+    font-family:$defaultFont;
+    font-size: 2em;
+    line-height:1.2em;
+    margin: .67em 0;
+}
+
+h2,
+.h2 {
+    font-family:$defaultFont;
+    font-size: 1.5em;
+    line-height:1.1em;
+}
+
+h3,
+.h3 {
+    font-family:$defaultFont;
+    font-size: 1.17em;
+    line-height:1.1em;
+}
+
+h4,
+.h4 {
+    font-family:$defaultFont;
+    font-size: 1em;
+    line-height:1.1em;
+}
+
+h5,
+.h5 {
+    font-family:$defaultFont;
+    font-size: 0.9em;
+}
+
+h6,
+.h6 {
+    font-family:$defaultFont;
+    font-size: 0.8em;
+}
+
+p {
+    margin: 0 0 $line-height * 1;
+}
+
+
+.logo{
+  position:relative;
+  font-family:$arvo;
+  font-size:1.3em;
+  color:white;
+  a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    padding-top:0.45em;
+    padding-bottom:0.5em;
+  }
+  .sub{
+    font-style:italic;
+    position:absolute;
+    bottom:-0.35em;
+    right:0;
+    font-size:35%;
+  }
+}
+
+
+
+abbr[title],
+abbr[data-original-title] {
+  cursor: help;
+  border-bottom: 1px dotted #999999;
+}
+
+abbr.initialism {
+  font-size: 90%;
+  text-transform: uppercase;
+}
+
+blockquote{
+}
+
+blockquote p {
+  font-size: 1.5em;
+  line-height: 1.4em;
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+cite{
+
+}
+
+address {
+    margin-bottom: 20px;
+    font-style: italic;
+    line-height: $line-height;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+}
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  white-space: nowrap;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+pre {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: $line-height;
+  color: #333333;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.pre-scrollable {
+  max-height: 340px;
+  overflow-y: scroll;
+}
+
+
+@font-face {
+  font-family: "gitcommit";
+  src:url("/fonts/gitcommit.eot");
+  src:url("/fonts/gitcommit.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/gitcommit.woff") format("woff"),
+    url("/fonts/gitcommit.ttf") format("truetype"),
+    url("/fonts/gitcommit.svg#gitcommit") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "gitcommit" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "gitcommit" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-up-circled:before {
+  content: "a";
+}
+.icon-up:before {
+  content: "b";
+}
+.icon-cancel:before {
+  content: "c";
+}
+.icon-cancel-circled:before {
+  content: "d";
+}
+.icon-plus:before {
+  content: "e";
+}
+.icon-caret-down-two:before {
+  content: "f";
+}
+.icon-down-open:before {
+  content: "g";
+}
+.icon-down-open-mini:before {
+  content: "h";
+}
+.icon-up-open:before {
+  content: "i";
+}
+.icon-up-open-mini:before {
+  content: "j";
+}
+.icon-pencil-1:before {
+  content: "l";
+}
+.icon-list-add:before {
+  content: "k";
+}
+.icon-page-add:before {
+  content: "m";
+}

@@ -1,0 +1,24 @@
+<template name="user_loggedin">
+	{{# if loggingIn}}
+		<a class="fr" href="">Logging in...</a>
+	{{else}}
+		<div class="fr dropdown-container">
+			<img class="fl avatar" src="{{currentUser.profile.avatar_url}}" alt="avatar">
+			<a class="dropdownBtn" href="">
+				{{currentUser.profile.name}} <i class="icon-caret-down-two"></i>
+			</a>
+			<div class="dropdown">
+				<ul class="list-unstyled">
+					<li>Hi, {{currentUser.profile.login}}</li>
+					<li><a href="" id="logout">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	{{/if}}
+</template>
+
+<template name="user_loggedout">
+	<div class="fr dropdown-container">
+		<a class="fr" id="login" href="#">Login with Github</a>
+	</div>
+</template>

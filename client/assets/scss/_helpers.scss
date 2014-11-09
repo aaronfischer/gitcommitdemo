@@ -1,0 +1,245 @@
+/*--------------------------------------------------------------------------
+*
+*	Helper Classes
+*
+*-------------------------------------------------------------------------*/
+
+/* Clearfix */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+.cf:after {
+    clear: both;
+}
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+/* Image Replacement */
+.ir {
+    display: block;
+    text-indent: -999em;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    text-align: left;
+    direction: ltr;
+    font-size: 0;
+    line-height: 0;
+}
+input.ir {
+    border: 0 none;
+    background: none;
+}
+
+/* Browser */
+.visible {
+    display: block;
+    visibility: visible;
+}
+.hidden {
+    display: none;
+    visibility: visible;
+}
+
+
+.dtable{
+	display:table;
+}
+.dtablecell{
+	display:table-cell;
+	float:none;
+}
+@media (max-width: $phone) {
+
+    .phone-dtable {
+        display:table;
+    }
+    .phone-dtablecell {
+        display:table-cell;
+        float:none;
+    }
+
+}
+@media (min-width: $pad) and (max-width: $desk) {
+
+    .pad-dtable {
+        display:table;
+    }
+    .pad-dtablecell {
+        display:table-cell;
+        float:none;
+    }
+
+}
+@media (min-width: $desk) {
+
+    .desk-dtable {
+        display:table;
+    }
+    .desk-dtablecell {
+        display:table-cell;
+        float:none;
+    }
+
+}
+
+/* Float */
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.fn {
+    float: none;
+}
+
+.inline-col{
+    display:inline-block;
+    vertical-align: top;
+    float:none;
+    margin-left:1.2%;
+    margin-right:1.2%;
+}
+
+
+/* Align */
+.al {
+    text-align: left;
+}
+.ar {
+    text-align: right;
+}
+.ac {
+    text-align: center;
+}
+
+@mixin al() {
+    text-align: left;
+}
+@mixin ar() {
+    text-align: right;
+}
+@mixin ac() {
+    text-align: center;
+}
+
+
+/* Center Img */
+.ci {
+    margin-left:auto !important;
+    margin-right:auto !important;
+    float:none;
+}
+@mixin ci() {
+    margin-left:auto !important;
+    margin-right:auto !important;
+    float:none;
+}
+
+@media (max-width: $phone) {
+
+    .phone-ci {
+        margin-left:auto !important;
+        margin-right:auto !important;
+        float:none;
+    }
+
+}
+@media (min-width: $pad) and (max-width: $desk) {
+
+    .pad-ci {
+        margin-left:auto !important;
+        margin-right:auto !important;
+        float:none;
+    }
+
+}
+@media (min-width: $desk) {
+
+    .desk-ci {
+        margin-left:auto !important;
+        margin-right:auto !important;
+        float:none;
+    }
+
+}
+
+/* pad */
+@media (min-width: $pad) {
+
+    .pad-visible {
+        display: block;
+    }
+    .pad-hidden {
+        display: none;
+    }
+
+
+    /* Float */
+    .pad-fl {
+        float: left;
+    }
+    .pad-fr {
+        float: right;
+    }
+    .pad-fn {
+        float: none;
+    }
+
+
+    /* Align */
+    .pad-al {
+        text-align: left;
+    }
+    .pad-ar {
+        text-align: right;
+    }
+    .pad-ac {
+        text-align: center;
+    }
+
+}
+
+
+/* desk */
+@media (min-width: $desk) {
+
+    .desk-visible {
+        display: block;
+    }
+    .desk-hidden {
+        display: none;
+    }
+
+
+    /* Float */
+    .desk-fl {
+        float: left;
+    }
+    .desk-fr {
+        float: right;
+    }
+    .desk-fn {
+        float: none;
+    }
+
+
+    /* Align */
+    .desk-al {
+        text-align: left;
+    }
+    .desk-ar {
+        text-align: right;
+    }
+    .desk-ac {
+        text-align: center;
+    }
+
+}

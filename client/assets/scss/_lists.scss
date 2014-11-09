@@ -1,0 +1,149 @@
+/*--------------------------------------------------------------------------
+*
+*  Lists / UL OL DL
+*
+* This section a set of default forms styles, please add/change these styles.
+*
+*-------------------------------------------------------------------------*/
+
+
+ul,
+ol {
+  margin-top: 2.6em;
+  margin-bottom: 2.6em;
+  padding:0 0 0 15px;
+  li{
+      margin-bottom:0.75em;
+  }
+  ul{
+      margin-top: 0.6em;
+      margin-bottom: inherit;
+  }
+}
+ol{
+  list-style:decimal;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-bottom: 0;
+}
+
+.list-unstyled {
+  margin:0;
+  padding-left: 0;
+  list-style: none;
+  li{
+      margin:0;
+  }
+}
+
+.list-inline {
+  padding-left: 0;
+  list-style: none;
+  > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+    &:first-child{
+      padding-left: 0;
+    }
+  }
+}
+
+dl {
+    margin-bottom: 20px;
+}
+
+dt,
+dd {
+    line-height: $line-height;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 0;
+}
+
+/* Pad Breakpoint */
+@media (min-width: $pad) {
+
+    /* Horizontal List */
+    .pad-hl {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: block;
+        position: relative;
+    }
+    .pad-hl > li {
+        float: left;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .pad-hl > li.fr {
+        float: right;
+    }
+
+
+    /* Block List */
+    .pad-bl {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: block;
+        position: relative;
+    }
+    .pad-bl > li {
+        display: block;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+
+}
+
+/* Desk Breakpoint */
+@media (min-width: $desk) {
+
+    /* Horizontal List */
+    .desk-hl {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: block;
+        position: relative;
+    }
+    .desk-hl > li {
+        float: left;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+    .desk-hl > li.fr {
+        float: right;
+    }
+
+
+    /* Block List */
+    .desk-bl {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: block;
+        position: relative;
+    }
+    .desk-bl > li {
+        display: block;
+        margin: 0;
+        padding: 0;
+        float: none;
+    }
+
+}

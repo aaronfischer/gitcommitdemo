@@ -1,0 +1,188 @@
+/*--------------------------------------------------------------------------
+*
+*	Columns
+*
+*-------------------------------------------------------------------------*/
+$numberOfColumns: 25;
+
+/* breakpoints */
+$desk-max : 1400px;
+$desk : 1140px;
+$pad : 650px;
+$phone : 649px;
+
+
+.container {
+	// max-width:960px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.row{
+	width:100%;
+}
+
+[class*="col-"] {
+	float:left;
+	min-height: 1px;
+}
+
+	/* demo purposes */
+		.show-grid [class*="col-"]{
+			background-color: #EEEEEE;
+			border-radius: 5px;
+			line-height: 40px;
+			min-height: 40px;
+			text-align: center;
+			margin-bottom: 10px;
+		}
+	/* end demo purposes */
+
+$colCount: $numberOfColumns;
+$innerCols: $numberOfColumns;
+
+@while $colCount > 0 {
+	.col-#{$colCount} {
+		width: ($colCount / $numberOfColumns) * 100%;
+
+		@for $y from 1 through $colCount{
+			.col-#{$y}{
+				width: ($y / $colCount) * 100%;
+			}
+		}
+	}
+	$colCount: $colCount - 1;
+}
+
+.col-25p{
+	width:25%;
+}
+.col-33p{
+	width:33.3%;
+}
+.col-50p{
+	width:50%;
+}
+.col-75p{
+	width:75%;
+}
+
+@media (max-width: $phone) {
+
+	.phone-col-25p{
+		width:25%;
+	}
+	.phone-col-33p{
+		width:33.3%;
+	}
+	.phone-col-50p{
+		width:50%;
+	}
+	.phone-col-75p{
+		width:75%;
+	}
+
+}
+
+/* iPad breakpoint styling
+*  This allows you to override based on breakpoint
+*  <div class="col-12 pad-col-6">
+*  On mobile it will be 12 columns but on iPad it will be 6 columns
+*/
+@media (min-width: $pad) {
+
+	$colCount: $numberOfColumns;
+	$innerCols: $numberOfColumns;
+
+	@while $colCount > 0 {
+		.pad-col-#{$colCount} {
+			width: ($colCount / $numberOfColumns) * 100%;
+
+			@for $y from 1 through $colCount{
+				.pad-col-#{$y}{
+					width: ($y / $colCount) * 100%;
+				}
+			}
+			.pad-col-25p{
+				width:25%;
+			}
+			.pad-col-33p{
+				width:33.3%;
+			}
+			.pad-col-50p{
+				width:50%;
+			}
+			.pad-col-75p{
+				width:75%;
+			}
+		}
+		$colCount: $colCount - 1;
+	}
+
+	.pad-col-25p{
+		width:25%;
+	}
+	.pad-col-33p{
+		width:33.3%;
+	}
+	.pad-col-50p{
+		width:50%;
+	}
+	.pad-col-75p{
+		width:75%;
+	}
+
+
+}
+
+
+/* Desk breakpoint styling
+*  This allows you to override based on breakpoint
+*  <div class="col-12 pad-col-6 desk-col-4">
+*  On mobile it will be 12 columns but on Desk it will be 4 columns
+*/
+@media (min-width: $desk) {
+
+	$colCount: $numberOfColumns;
+	$innerCols: $numberOfColumns;
+
+	@while $colCount > 0 {
+		.desk-col-#{$colCount} {
+			width: ($colCount / $numberOfColumns) * 100%;
+
+			@for $y from 1 through $colCount{
+				.desk-col-#{$y}{
+					width: ($y / $colCount) * 100%;
+				}
+			}
+			.desk-col-25p{
+				width:25%;
+			}
+			.desk-col-33p{
+				width:33.3%;
+			}
+			.desk-col-50p{
+				width:50%;
+			}
+			.desk-col-75p{
+				width:75%;
+			}
+		}
+		$colCount: $colCount - 1;
+	}
+
+	.desk-col-25p{
+		width:25%;
+	}
+	.desk-col-33p{
+		width:33.3%;
+	}
+	.desk-col-50p{
+		width:50%;
+	}
+	.desk-col-75p{
+		width:75%;
+	}
+
+
+}

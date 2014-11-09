@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------------------
+*
+*  Images
+*
+* This section only sets default image styles. There are no actionables here.
+*
+*-------------------------------------------------------------------------*/
+
+img {
+    vertical-align: middle;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.img-rounded {
+    border-radius: 6px;
+}
+/* Full width */
+img.fw {
+    width: 100%;
+}

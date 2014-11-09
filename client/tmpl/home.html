@@ -1,0 +1,35 @@
+<template name="home">
+	<header class="bar-fixed header-fixed">
+		<div class="container">
+			<div class="row cf">
+				<div class="col-25 ci pad-col-25 desk-col-25">
+					<div class="col-1"></div>
+					<div class="fl al logo">
+						<a href="/">
+							<span>git</span><strong>commit </strong><span>-m</span>
+							<span class="sub">alpha</span>
+						</a>
+					</div>
+					<div class="col-2 pad-col-2 desk-col-2 ac fr">
+						<a href="" class="btn-super-action btn-rel addMessage ac"><i class="icon-list-add"></i></a>
+					</div>
+					{{#if currentUser}}
+						{{> user_loggedin}}
+					{{else}}
+						{{> user_loggedout}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="commit-list">
+		<div class="container">
+			{{#each commitList}}
+				{{> commitRow}}
+			{{/each}}
+		</div>
+	</section>
+	{{> commitForm}}
+	{{> infoModal}}
+	{{> googleAnalytics}}
+</template>

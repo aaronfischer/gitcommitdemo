@@ -1,0 +1,21 @@
+/* ---------
+Vertical Align
+----------*/
+@mixin vertical-align {
+	position: relative;
+	top: 50%;
+	@include transform(translateY(-50%));
+}
+.vertical-align{
+	@include vertical-align();
+}
+
+
+@mixin horizontal-align {
+	position: absolute;
+	left: 50%;
+	@include transform(translateX(-50%));
+}
+.horizontal-align{
+	@include horizontal-align();
+}

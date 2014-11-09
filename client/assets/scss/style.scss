@@ -1,0 +1,289 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/css3";
+@import "_color";
+@import "_custom";
+@import "_default";
+@import "_type";
+@import "_grid";
+@import "_tables";
+@import "_forms";
+@import "_links";
+@import "_lists";
+@import "_helpers";
+
+body{
+	background:rgba(black,0.025);
+	font-family:"PT Mono", Courier, serif;
+}
+
+.margin-0{
+	margin:0;
+}
+.margin-top-05em{
+	margin-top:0.5em;
+}
+.margin-top-2em{
+	margin-top:2em;
+}
+.pad-top-1em{
+	padding-top:1em;
+}
+.pad-bottom-1em{
+	padding-bottom:1em;
+}
+.pad-top-2em{
+	padding-top:2em;
+}
+.pad-bottom-2em{
+	padding-bottom:2em;
+}
+.border-bottom{
+	border-bottom:1px solid rgba(black,0.05);
+}
+
+.prompt{
+	padding-right:3px;
+	color: $orange;
+	font-weight:600;
+	width: 12px;
+	display: inline-block;
+}
+.git-commit{
+	color: $orange;
+	width: 125px;
+	display: inline-block;
+}
+.quote{
+	color:$orange;
+	display: inline-block;
+	width: 10px;
+}
+.commit-list{
+	margin-top:65px;
+	margin-bottom:65px;
+	.votes{
+		position:relative;
+		display: inline-block;
+		margin-right:10px;
+		&:hover{
+			.voteCount{
+				opacity: 1;
+				visibility: visible;
+				@include transform(translateY(0));
+				@include transition(opacity 0.5s, transform 0.25s);
+			}
+		}
+		.voteCount{
+			position: absolute;
+			left: -30px;
+			top: 6px;
+			opacity: 0;
+			visibility: hidden;
+			color:rgba($teal,0.8);
+			@include transform(translateY(-5px));
+			@include transition(opacity 0.5s, visibility 0s 0.5s, transform 0.25s);
+		}
+	}
+}
+.commitRow{
+	position:relative;
+}
+.bar-fixed{
+	position:fixed;
+	z-index:1;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:rgba($teal,0.98);
+}
+
+.dropdown-container{
+	font-family:$helvetica;
+	font-size:0.8em;
+	position:relative;
+	margin-left:10px;
+	margin-right:10px;
+	padding:10px 0;
+	.dropdownBtn{
+		margin-left:20px;
+		color:white;
+	}
+	.avatar{
+		height:25px;
+		width:25px;
+		background-color:white;
+		@include border-radius(10%);
+		border:0s;
+		outline:0;
+		overflow:hidden;
+		text-indent:100%;
+	}
+}
+#login{
+	color:white;
+}
+.dropdown{
+	position:absolute;
+	width:175px;
+	opacity: 0;
+	top:55px;
+	right:-10px;
+	visibility: hidden;
+	z-index:1;
+	@include transition(opacity 0.5s, visibility 0s 0.5s, transform 0.25s);
+	background-color:white;
+	padding:5px 15px;
+	@include transform(translateY(-20px));
+	&:before{
+		content: '';
+		height:0;
+		width:0;
+		position:absolute;
+		top:-7px;
+		right:10px;
+		border-left: 7px solid transparent;
+		border-right: 7px solid transparent;
+		border-bottom: 7px solid white;
+	}
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		@include transition(opacity 0.5s, transform 0.25s);
+		z-index:2;
+		@include transform(translateY(0));
+	}
+	li{
+		border-top:1px solid rgba(black,0.1);
+		padding:5px 0;
+		&:first-child{
+			border-top:0 none;
+		}
+	}
+}
+.twitter-container{
+	padding-top:0.75em;
+}
+
+
+
+
+
+.overlay{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(white,0.95);
+	z-index:1;
+	&.overlay-info{
+		background-color:rgba(darken($teal,15%),0.85);
+		color:white;
+		a{
+			color:white;
+		}
+		.modal-info-content{
+			background-color:$teal;
+			width:70%;
+			max-width:700px;
+		}
+		.modal-header{
+			background-color:darken($teal,1.5%);
+		}
+	}
+}
+.overlay {
+	opacity: 0;
+	visibility: hidden;
+	@include transition(opacity 0.4s, visibility 0s 0.4s);
+	&.open {
+		opacity: 1;
+		visibility: visible;
+		overflow-y: scroll; /* has to be scroll, not auto */
+ 	 	-webkit-overflow-scrolling: touch;
+		@include transition(opacity 0.4s);
+		z-index:2;
+	}
+}
+
+// .modal{
+// 	position: fixed;
+// 	top: 50%;
+// 	left: 50%;
+// 	width: 60%;
+// 	height: auto;
+// 	z-index: 2000;
+// 	visibility: hidden;
+// 	@include backface-visibility(hidden);
+// 	@include transform(translate(-50%,-50%));
+
+// 	-webkit-perspective: 1300px;
+// 	-moz-perspective: 1300px;
+// 	perspective: 1300px;
+
+// 	.open &{
+// 		visibility:visible;
+// 	}
+// }
+// .modal-overlay{
+// 	position:fixed;
+// 	height:100%;
+// 	width:100%;
+// 	top:0;
+// 	bottom:0;
+// 	left:0;
+// 	right:0;
+// 	background-color:rgba(darken($teal,20%),0.8);
+// 	opacity:0;
+// 	visibility:hidden;
+// 	z-index:100;
+// 	@include transition(opacity 0.3s ease, visibility 0s 0.3s ease);
+// 	.open &{
+// 		opacity:1;
+// 		visibility:visible;
+// 		@include transition(opacity 0.3s ease);
+// 	}
+// }
+
+.animate-form{
+	@include transform(translateY(-60%));
+	@include transition(transform 0.4s ease);
+	.open &{
+		@include transform(translateY(-50%));
+		@include transition(transform 0.4s ease);
+	}
+}
+
+// .modal-info-content{
+// 	color: #fff;
+// 	background: $teal;
+// 	position: relative;
+// 	margin: 0 auto;
+
+// 	-webkit-transform-style: preserve-3d;
+// 	-moz-transform-style: preserve-3d;
+// 	transform-style: preserve-3d;
+// 	-webkit-transform: rotateY(-70deg);
+// 	-moz-transform: rotateY(-70deg);
+// 	-ms-transform: rotateY(-70deg);
+// 	transform: rotateY(-70deg);
+// 	-webkit-transition: all 0.3s;
+// 	-moz-transition: all 0.3s;
+// 	transition: all 0.3s;
+// 	opacity: 0;
+
+// 	.open &{
+// 		-webkit-transform: rotateY(0deg);
+// 		-moz-transform: rotateY(0deg);
+// 		-ms-transform: rotateY(0deg);
+// 		transform: rotateY(0deg);
+// 		opacity: 1;
+// 	}
+// 	a{
+// 		color:white;
+// 	}
+// }

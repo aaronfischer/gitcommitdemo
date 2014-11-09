@@ -1,0 +1,30 @@
+<template name="commitRow">
+	<div class="row cf commitRow border-bottom">
+		<article class="col-23 pad-col-21 desk-col-21 ci pad-top-1em pad-bottom-1em " data-user="{{user}}" data-date="{{date}}">
+			<div class="row cf">
+				<div class="col-20 pad-col-18 desk-col-18">
+					<span class="votes">
+						<span class="upVote btn btn-square btn-action"><i class="icon-up-open"></i></span>
+						<span class="voteCount">
+							{{#if votes}}
+								{{votes}}
+							{{else}}
+								0
+							{{/if}}
+						</span>
+					</span>
+					<span class="prompt">$ </span>
+					<span class="git-commit">git commit -m </span>
+					<span class="quote">'</span>
+					<span class="message">{{message}}</span>
+					<span class="quote">'</span>
+				</div>
+				<div class="col-3 pad-col-3 desk-col-3">
+					{{#if edit}}
+						<a href="" class="edit btn fr small margin-top-05em">edit <i class="icon-pencil-1"></i></a>
+					{{/if}}
+				</div>
+			</div>
+		</article>
+	</div>
+</template>
