@@ -95,7 +95,6 @@ Template.commitForm.events({
 		// check if its a click or a return keyup
 		if(evt.type == 'keyup' && evt.which === 13 || evt.type == 'click'){
 			var user = Meteor.users.findOne(Meteor.userId),
-				// date = tmpl.find('.date').value,
 				message = tmpl.find('.message').value;
 			// check if message.value is empty and throw error
 			if(message.length > 1){

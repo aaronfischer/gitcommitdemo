@@ -10,6 +10,7 @@ accounts-oauth
 accounts-ui
 blaze
 http
-iron:router
 service-configuration
 underscore
+iron:router
+
